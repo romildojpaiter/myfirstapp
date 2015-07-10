@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -23,8 +24,11 @@ public class MyActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_my, menu);
-        return true;
+        // getMenuInflater().inflate(R.menu.menu_my, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_my, menu);
+        return super.onCreateOptionsMenu(menu);
+        // return true;
     }
 
     @Override
@@ -39,7 +43,17 @@ public class MyActivity extends ActionBarActivity {
             return true;
         }
 
+        if (id == R.id.action_search) {
+            openSearchActivity();
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    private void openSearchActivity() {
+        Intent intent = new Intent(this, SearchActivity.class);
+        startActivity(intent);
     }
 
     public void sendMessage(View view){
