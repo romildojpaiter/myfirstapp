@@ -1,6 +1,8 @@
 package br.com.paiter.myfirstapp;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,9 +10,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MyActivity extends ActionBarActivity {
+
+    TextView mTextView; // Member variable for text view in the layout
 
     public static final String EXTRA_MESSSAGE = "br.com.paiter.myfirstapp.MESSAGE";
 
@@ -18,6 +23,10 @@ public class MyActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
+        // Initialize member TextView so we can manipulate it later
+        mTextView = (TextView) findViewById(R.id.edit_message);
+
     }
 
 

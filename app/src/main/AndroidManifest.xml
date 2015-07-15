@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.paiter.myfirstapp" >
-    <!-- Definindo a versao minima e o alvo do android -->
-    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="15" />
+    package="br.com.paiter.myfirstapp" > <!-- Definindo a versao minima e o alvo do android -->
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="22" />
+
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Erro apos definir o minSdkVersion
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    -->
 
     <application
         android:allowBackup="true"
@@ -18,6 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <!-- A child of the main activity -->
         <activity
             android:name=".DisplayMessageActivity"
@@ -28,13 +43,17 @@
                 android:value="br.com.paiter.myfirstapp.MyActivity" />
         </activity>
         <activity
-            android:theme="@android:style/Theme.Translucent"
             android:name=".SearchActivity"
             android:label="@string/title_activity_search"
-            android:parentActivityName=".MyActivity" >
+            android:parentActivityName=".MyActivity"
+            android:theme="@android:style/Theme.Translucent" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.paiter.myfirstapp.MyActivity" />
+        </activity>
+        <activity
+            android:name=".fragmento.ArtigoViewActivity"
+            android:label="@string/title_activity_artigo_view" >
         </activity>
     </application>
 
