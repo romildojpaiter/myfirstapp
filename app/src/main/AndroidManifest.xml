@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.paiter.myfirstapp" >
+    <!-- Definindo a versao minima e o alvo do android -->
+    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="15" />
 
     <application
         android:allowBackup="true"
@@ -26,6 +28,7 @@
                 android:value="br.com.paiter.myfirstapp.MyActivity" />
         </activity>
         <activity
+            android:theme="@android:style/Theme.Translucent"
             android:name=".SearchActivity"
             android:label="@string/title_activity_search"
             android:parentActivityName=".MyActivity" >
